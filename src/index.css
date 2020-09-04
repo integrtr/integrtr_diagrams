@@ -1,13 +1,77 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+  font-family: Roboto, Lato, Helvetica, Arial, sans-serif;
+  color: #030303;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html,
+body,
+#root,
+.app {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.app {
+  display: flex;
+  overflow: hidden;
+}
+
+aside {
+  width: 250px;
+}
+
+.palette {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.shape {
+  margin: 10px;
+  height: 100px;
+  width: 150px;
+  border: solid 2px black;
+}
+
+.circle {
+  width: 100px;
+  border-radius: 50%;
+}
+
+.inspector {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.properties {
+  margin-top: 10px;
+}
+
+.key {
+  color: lightslategray;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  align-items: center;
+  height: 25px;
+}
+
+.value {
+  color: darkslategray;
+  font-weight: bolder;
+}
+
+.no-data {
+  color: darkslategray;
+}
+
+.canvas {
+  width: calc(100% - 200px);
+  border: solid 2px darkgrey;
 }
