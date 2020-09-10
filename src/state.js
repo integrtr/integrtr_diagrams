@@ -5,11 +5,31 @@ import { nanoid } from "nanoid";
 
 import { SHAPE_TYPES, DEFAULTS, LIMITS } from "./constants";
 
-export const [useShapes, updateState] = createStore({
+const APP_NAMESPACE = "__integrtr_diagrams__";
+
+const baseState = {
   selected: null,
   shapes: {},
+};
+
+export const useShapes = createStore(() => {
+  const initialState = JSON.parse(localStorage.getItem(APP_NAMESPACE));
+
+  return { ...baseState, shapes: initialState ?? {} };
 });
-export const setState = (fn) => updateState(produce(fn));
+const setState = (fn) => useShapes.set(produce(fn));
+
+export const saveDiagram = () => {
+  const state = useShapes.get();
+
+  localStorage.setItem(APP_NAMESPACE, JSON.stringify(state.shapes));
+};
+
+export const reset = () => {
+  localStorage.removeItem(APP_NAMESPACE);
+
+  useShapes.set(baseState);
+};
 
 export const createRectangle = ({ x, y }) => {
   setState((state) => {
@@ -19,6 +39,7 @@ export const createRectangle = ({ x, y }) => {
       height: DEFAULTS.RECT.HEIGHT,
       fill: DEFAULTS.RECT.FILL,
       stroke: DEFAULTS.RECT.STROKE,
+      rotation: DEFAULTS.RECT.ROTATION,
       x,
       y,
     };
@@ -41,6 +62,12 @@ export const createCircle = ({ x, y }) => {
 export const selectShape = (id) => {
   setState((state) => {
     state.selected = id;
+  });
+};
+
+export const clearSelection = () => {
+  setState((state) => {
+    state.selected = null;
   });
 };
 
@@ -84,9 +111,14 @@ export const transformRectangleShape = (node, id, event) => {
       shape.x = node.x();
       shape.y = node.y();
 
+      shape.rotation = node.rotation();
+
       shape.width = clamp(
+        // increase the width in order of the scale
         node.width() * scaleX,
+        // should not be less than the minimum width
         LIMITS.RECT.MIN,
+        // should not be more than the maximum width
         LIMITS.RECT.MAX
       );
       shape.height = clamp(

@@ -23,7 +23,7 @@ export function Circle({ id, isSelected, type, ...shapeProps }) {
 
   useEffect(() => {
     if (isSelected) {
-      transformerRef.current.setNode(shapeRef.current);
+      transformerRef.current.nodes([shapeRef.current]);
       transformerRef.current.getLayer().batchDraw();
     }
   }, [isSelected]);
@@ -68,6 +68,7 @@ export function Circle({ id, isSelected, type, ...shapeProps }) {
           anchorSize={5}
           borderDash={[6, 2]}
           ref={transformerRef}
+          rotateEnabled={false}
           enabledAnchors={[
             "top-left",
             "top-right",

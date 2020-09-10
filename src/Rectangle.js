@@ -23,7 +23,7 @@ export function Rectangle({ id, isSelected, type, ...shapeProps }) {
 
   useEffect(() => {
     if (isSelected) {
-      transformerRef.current.setNode(shapeRef.current);
+      transformerRef.current.nodes([shapeRef.current]);
       transformerRef.current.getLayer().batchDraw();
     }
   }, [isSelected]);

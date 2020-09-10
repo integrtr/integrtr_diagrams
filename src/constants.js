@@ -5,14 +5,15 @@ export const SHAPE_TYPES = {
 
 export const DEFAULTS = {
   RECT: {
-    STROKE: "black",
-    FILL: "white",
+    STROKE: "#000000",
+    FILL: "#ffffff",
     WIDTH: 150,
     HEIGHT: 100,
+    ROTATION: 0,
   },
   CIRCLE: {
-    STROKE: "black",
-    FILL: "white",
+    STROKE: "#000000",
+    FILL: "#ffffff",
     RADIUS: 50,
   },
 };
@@ -28,4 +29,4 @@ export const LIMITS = {
   },
 };
 
-export const DRAG_DATA_KEY = "TYPE";
+export const DRAG_DATA_KEY = "__drag_data_payload__";

@@ -1095,10 +1095,10 @@
   resolved "https://registry.yarnpkg.com/@csstools/normalize.css/-/normalize.css-10.1.0.tgz#f0950bba18819512d42f7197e56c518aa491cf18"
   integrity sha512-ij4wRiunFfaJxjB0BdrYHIH8FxBJpOwNPhhAcunlmPdXudL1WQV1qoP9un6JsEBAgQH+7UXyyjh0g7jTxXK6tg==
 
-"@halka/state@^1.0.0-0":
-  version "1.0.0-0"
-  resolved "https://registry.yarnpkg.com/@halka/state/-/state-1.0.0-0.tgz#2a9add4562cdbce4a2e4cb29430ae4fb9072bfae"
-  integrity sha512-FBmQNBAPzX1MN49PKzcQlJS0sG/bO0wKWHS5KCbWBDB37Yz4XPsCKWskiFM4td/KHU1XtmT65qVA/nd4xH+M0A==
+"@halka/state@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@halka/state/-/state-1.0.0.tgz#4061a1940d233fa1c6a5e39e724768e788416aa8"
+  integrity sha512-YEOgMb8fkjGEIMXdA9jVcjWsps/SJRyMGVUMJvZnRuqjYXRqQS9ENBZeNhVm5chAHOzoiykPpNL2LTj8Leu3aQ==
 
 "@hapi/address@2.x.x":
   version "2.1.4"

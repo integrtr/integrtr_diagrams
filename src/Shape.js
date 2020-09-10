@@ -5,22 +5,17 @@ import { useShapes } from "./state";
 import { Circle } from "./Circle";
 import { Rectangle } from "./Rectangle";
 
-export function Shape(props) {
-  const shapeSelector = useCallback((state) => state.shapes[props.id], [
-    props.id,
-  ]);
-  const shape = useShapes(shapeSelector);
-
+export function Shape({ shape }) {
   const isSelectedSelector = useCallback(
-    (state) => state.selected === props.id,
-    [props.id]
+    (state) => state.selected === shape.id,
+    [shape]
   );
   const isSelected = useShapes(isSelectedSelector);
 
   if (shape.type === SHAPE_TYPES.RECT) {
-    return <Rectangle {...shape} id={props.id} isSelected={isSelected} />;
+    return <Rectangle {...shape} isSelected={isSelected} />;
   } else if (shape.type === SHAPE_TYPES.CIRCLE) {
-    return <Circle {...shape} id={props.id} isSelected={isSelected} />;
+    return <Circle {...shape} isSelected={isSelected} />;
   }
 
   return null;

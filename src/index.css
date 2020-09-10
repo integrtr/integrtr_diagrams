@@ -73,5 +73,31 @@ aside {
 
 .canvas {
   width: calc(100% - 200px);
-  border: solid 2px darkgrey;
+  border: solid 1px lightgray;
+  border-top: none;
+  border-bottom: none;
+  position: relative;
+}
+
+.buttons {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.buttons button {
+  margin: 4px;
+  height: 30px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: lightgray;
+  transition: all 0.25s ease-in;
+  z-index: 10;
+  padding: 0 8px;
+  border-radius: 4px;
+}
+
+.buttons button:hover {
+  background: darkgray;
 }

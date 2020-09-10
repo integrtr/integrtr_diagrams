@@ -4,7 +4,7 @@ import { useShapes, updateAttribute } from "./state";
 
 const shapeSelector = (state) => state.shapes[state.selected];
 
-export function Inspector() {
+export function PropertiesPanel() {
   const selectedShape = useShapes(shapeSelector);
 
   const updateAttr = useCallback((event) => {
