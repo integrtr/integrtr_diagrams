@@ -43,7 +43,7 @@ aside {
   border-radius: 50%;
 }
 
-.inspector {
+.panel {
   display: flex;
   flex-direction: column;
   padding: 10px;

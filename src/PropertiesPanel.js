@@ -14,7 +14,7 @@ export function PropertiesPanel() {
   }, []);
 
   return (
-    <aside className="inspector">
+    <aside className="panel">
       <h2>Properties</h2>
       <div className="properties">
         {selectedShape ? (
