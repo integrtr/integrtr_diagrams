@@ -1,103 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
-  margin: 0;
-  padding: 0;
-  border: none;
-  box-sizing: border-box;
-  font-family: Roboto, Lato, Helvetica, Arial, sans-serif;
-  color: #030303;
+	margin: 0;
+	padding: 0;
+	border: none;
+	box-sizing: border-box;
+	font-family: Roboto, Lato, Helvetica, Arial, sans-serif;
+	color: #030303;
 }
 
 html,
 body,
 #root,
 .app {
-  min-height: 100vh;
-  width: 100%;
+	min-height: 100vh;
+	width: 100%;
 }
 
 .app {
-  display: flex;
-  overflow: hidden;
+	display: flex;
+	overflow: hidden;
 }
 
 aside {
-  width: 250px;
+	width: 250px;
 }
 
 .palette {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 10px 0;
 }
 
 .shape {
-  margin: 10px;
-  height: 100px;
-  width: 150px;
-  border: solid 2px black;
+	margin: 10px;
+	height: 100px;
+	width: 150px;
+	border: solid 2px black;
 }
 
 .circle {
-  width: 100px;
-  border-radius: 50%;
+	width: 100px;
+	border-radius: 50%;
 }
 
 .panel {
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
 }
 
 .properties {
-  margin-top: 10px;
+	margin-top: 10px;
 }
 
 .key {
-  color: lightslategray;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-  align-items: center;
-  height: 25px;
+	color: lightslategray;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 10px;
+	align-items: center;
+	height: 25px;
 }
 
 .value {
-  color: darkslategray;
-  font-weight: bolder;
+	color: darkslategray;
+	font-weight: bolder;
 }
 
 .no-data {
-  color: darkslategray;
+	color: darkslategray;
 }
 
 .canvas {
-  width: calc(100% - 200px);
-  border: solid 1px lightgray;
-  border-top: none;
-  border-bottom: none;
-  position: relative;
+	width: calc(100% - 200px);
+	border: solid 1px lightgray;
+	border-top: none;
+	border-bottom: none;
+	position: relative;
 }
 
 .buttons {
-  display: flex;
-  position: absolute;
-  top: 0;
-  right: 0;
+	display: flex;
+	position: absolute;
+	top: 0;
+	right: 0;
 }
 
 .buttons button {
-  margin: 4px;
-  height: 30px;
-  text-transform: uppercase;
-  cursor: pointer;
-  background: lightgray;
-  transition: all 0.25s ease-in;
-  z-index: 10;
-  padding: 0 8px;
-  border-radius: 4px;
+	margin: 4px;
+	height: 30px;
+	text-transform: uppercase;
+	cursor: pointer;
+	background: lightgray;
+	transition: all 0.25s ease-in;
+	z-index: 10;
+	padding: 0 8px;
+	border-radius: 4px;
 }
 
 .buttons button:hover {
-  background: darkgray;
+	background: darkgray;
 }
