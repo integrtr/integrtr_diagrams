@@ -1,5 +1,5 @@
 import {createStore} from "@halka/state";
-import produce from "immer";
+import {produce} from "immer";
 import clamp from "clamp";
 import {nanoid} from "nanoid";
 
